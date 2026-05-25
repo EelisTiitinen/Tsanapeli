@@ -1,21 +1,4 @@
-const kysymykset = [
-    {
-        kysymys: "Mitä tarkoittaa sana eltaantunut?",
-        A: "Kastunut",
-        B: "Onnistunut",
-        C: "Pilaantunut",
-        D: "Hajonnut",
-        oikea: 3
-    },
-    {
-        kysymys: "Mikä on kurri?",
-        A: "Mauste",
-        B: "Jääkiekkomaila",
-        C: "Rasvaton maito",
-        D: "Puulaji",
-        oikea: 3
-    }
-];
+var kysymykset = [];
 
 const kysymys = document.getElementById("kysymys");
 
@@ -24,18 +7,46 @@ const nappiB = document.getElementById("b-btn");
 const nappiC = document.getElementById("c-btn");
 const nappiD = document.getElementById("d-btn");
 
-var randKys = kysymykset[Math.floor(Math.random() * kysymykset.length)];
+var randKys;
+var randKysIndex = -1;
 
-kysymys.innerHTML = randKys.kysymys
+fetch("kysymykset.json")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        kysymykset = data;
+        uusiKysymys();
+    })
+    .catch(function(error) {
+        console.error("Kysymysten lataaminen ep\u00e4onnistui:", error);
+        kysymys.innerHTML = "Kysymyksi\u00e4 ei voitu ladata.";
+    });
 
-nappiA.innerHTML = "A. " +  randKys.A
-nappiB.innerHTML = "B. " +  randKys.B
-nappiC.innerHTML = "C. " +  randKys.C
-nappiD.innerHTML = "D. " +  randKys.D
+function uusiKysymys() {
+    var uusiIndex = Math.floor(Math.random() * kysymykset.length);
+
+    while (kysymykset.length > 1 && uusiIndex == randKysIndex) {
+        uusiIndex = Math.floor(Math.random() * kysymykset.length);
+    }
+
+    randKysIndex = uusiIndex;
+    randKys = kysymykset[randKysIndex];
+
+    kysymys.innerHTML = randKys.kysymys
+
+    nappiA.innerHTML = "A. " +  randKys.A
+    nappiB.innerHTML = "B. " +  randKys.B
+    nappiC.innerHTML = "C. " +  randKys.C
+    nappiD.innerHTML = "D. " +  randKys.D
+}
 
 function tarkista(arvaus) {
+    if (!randKys) return;
+
     if (arvaus == randKys.oikea) {
-        alert("Oekein!")
+        alert("Oikein!")
+        uusiKysymys();
     }
-    else alert("Viärin!")
+    else alert("Väärin!")
 }

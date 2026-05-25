@@ -1,0 +1,34 @@
+[
+    {
+        "kysymys": "Mitä tarkoittaa sana eltaantunut?",
+        "A": "Kastunut",
+        "B": "Onnistunut",
+        "C": "Pilaantunut",
+        "D": "Hajonnut",
+        "oikea": 3
+    },
+    {
+        "kysymys": "Mikä on kurri?",
+        "A": "Mauste",
+        "B": "Rasvaton maito",
+        "C": "Jääkiekkomaila",
+        "D": "Puulaji",
+        "oikea": 2
+    },
+    {
+        "kysymys": "Minkä väristä ruoho on?",
+        "A": "Keltaista",
+        "B": "Sinistä",
+        "C": "Punaista",
+        "D": "Vihreä",
+        "oikea": 4
+    },
+    {
+        "kysymys": "Mistä koivu on tehty?",
+        "A": "Puusta",
+        "B": "Alumiinista",
+        "C": "Muovista",
+        "D": "Mudasta",
+        "oikea": 1
+    }
+]
