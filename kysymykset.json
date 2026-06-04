@@ -5,30 +5,43 @@
         "B": "Onnistunut",
         "C": "Pilaantunut",
         "D": "Hajonnut",
+        "sana": "eltaantua",
         "oikea": 3
     },
     {
-        "kysymys": "Mikä on kurri?",
-        "A": "Mauste",
-        "B": "Rasvaton maito",
-        "C": "Jääkiekkomaila",
-        "D": "Puulaji",
+        "kysymys": "Synonyymi sanalle saita",
+        "A": "Köyhä",
+        "B": "Pihi",
+        "C": "Kapea",
+        "D": "Paha",
+        "sana": "saita",
         "oikea": 2
     },
     {
-        "kysymys": "Minkä väristä ruoho on?",
-        "A": "Keltaista",
-        "B": "Sinistä",
-        "C": "Punaista",
-        "D": "Vihreä",
+        "kysymys": "Mikä on pomppa?",
+        "A": "Pipo",
+        "B": "Paise",
+        "C": "Kumisaapas",
+        "D": "Takki",
+        "sana": "pomppa",
         "oikea": 4
     },
     {
-        "kysymys": "Mistä koivu on tehty?",
-        "A": "Puusta",
-        "B": "Alumiinista",
-        "C": "Muovista",
-        "D": "Mudasta",
+        "kysymys": "Mitä tarkoittaa sana töydätä?",
+        "A": "Täyttää",
+        "B": "Kaatua",
+        "C": "Syöksyä",
+        "D": "Kaivaa",
+        "sana": "töydätä",
+        "oikea": 3
+    },
+    {
+        "kysymys": "Mikä on nahkiainen?",
+        "A": "Kala",
+        "B": "Sisäelin",
+        "C": "Nahkapipo",
+        "D": "Sian nänni",
+        "sana": "eltaantua",
         "oikea": 1
     }
 ]
