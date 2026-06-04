@@ -53,12 +53,19 @@ function tarkista(arvaus) {
         kysymys.style.color = "red";
     }
 
-    
+    var tapahtuma = "uusiKysymys()";
+
     if (randKysIndex == kysymykset.length - 1) {
-        kysymys.innerHTML = "Sait " + oikeat + "/" + kysymykset.length + " oikein!";
-        napit.innerHTML = "";
+        tapahtuma = "loppu()";
     }
-    else {
-        napit.innerHTML = '<button onclick="uusiKysymys()">Seuraava</button>';
-    }
+
+    napit.innerHTML = `<a href="https://www.kielitoimistonsanakirja.fi/#/${randKys.sana}" target="_blank"><p>${randKys.sana}</p></a><br><button onclick="${tapahtuma}">Seuraava</button>`;
+}
+
+function loppu() {
+    if (oikeat > kysymykset.length / 2) kysymys.style.color = "green";
+    else kysymys.style.color = "red";
+
+    kysymys.innerHTML = "Sait " + oikeat + "/" + kysymykset.length + " oikein!";
+    napit.innerHTML = "";
 }
